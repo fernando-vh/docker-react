@@ -15,8 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag fernando/my-image-name:$(date +%s)
     - uses: actions/checkout@v4
     - name: Test proyect
-      run: docker run my-image-name:$(date +%s) npm run test -- --coverage
+      run: docker run fernando/my-image-name:$(date +%s) npm run test -- --coverage
       
